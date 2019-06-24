@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "My Notes";
+}
+<h1>@User.Identity.Name's Notes</h1>
+
+<ul>
+    @foreach (var note in Model)
+    {
+        <li>@note</li>
+    }
+</ul>
+
+<form asp-action="Add" method="POST">
+    <input type="text" name="note" />
+    <input type="submit" value="Add Note" />
+</form>
